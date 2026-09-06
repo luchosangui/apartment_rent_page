@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terrazas de Manantiales · Apartamento 004</title>
+
+<!-- ============================================================= -->
+<!--  DATOS PARA EDITAR — cambiá solo estos valores                -->
+<!--  (precio, fechas, capacidad y WhatsApp)                       -->
+<!-- ============================================================= -->
+<meta property="og:title" content="Terrazas de Manantiales · Apartamento 004">
+<meta property="og:description" content="85 m² + 75 m² de terraza entoldada. Piscina, gimnasio y jardín. Manantiales, Uruguay.">
+<meta property="og:image" content="fotos/terrace.jpeg">
+<meta property="og:type" content="website">
+
+<style>
+  :root{
+    --bg:#faf8f5; --card:#ffffff; --ink:#1f2421; --muted:#6b7280;
+    --line:#e7e2da; --accent:#0f7a6b; --accent-ink:#0b5c50;
+    --wa:#25d366; --shadow:0 6px 24px rgba(31,36,33,.10);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+       color:var(--ink);background:var(--bg);line-height:1.55}
+  img{max-width:100%;display:block}
+  a{color:var(--accent-ink)}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;height:78vh;min-height:460px;overflow:hidden}
+  .hero img{width:100%;height:100%;object-fit:cover;filter:brightness(.82)}
+  .hero-txt{position:absolute;inset:auto 0 0 0;padding:40px 20px;
+            background:linear-gradient(to top,rgba(0,0,0,.65),transparent);color:#fff}
+  .hero-txt .in{max-width:1080px;margin:0 auto}
+  .hero h1{margin:0 0 6px;font-size:clamp(28px,5vw,46px);font-weight:700;letter-spacing:-.5px}
+  .hero .sub{font-size:clamp(15px,2.2vw,19px);opacity:.95}
+  .badges{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px}
+  .badge{background:rgba(255,255,255,.16);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,.25);
+         padding:6px 12px;border-radius:999px;font-size:13px;font-weight:600}
+
+  /* ---------- SECTIONS ---------- */
+  section{padding:52px 0}
+  h2{font-size:clamp(22px,3.5vw,30px);margin:0 0 22px;letter-spacing:-.4px}
+  .lead{color:var(--muted);max-width:640px;margin:-10px 0 28px}
+
+  /* ---------- PRECIO / FICHA ---------- */
+  .grid2{display:grid;grid-template-columns:1.3fr 1fr;gap:24px}
+  @media(max-width:760px){.grid2{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px;box-shadow:var(--shadow)}
+  .price{font-size:34px;font-weight:800;color:var(--accent-ink);letter-spacing:-1px}
+  .price small{font-size:15px;font-weight:600;color:var(--muted)}
+  .spec{display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px dashed var(--line);font-size:15px}
+  .spec:last-child{border-bottom:0}
+  .spec b{font-weight:600}
+  .ph{background:#fff6d8;border:1px dashed #d9b64a;color:#8a6d17;border-radius:8px;
+      padding:2px 8px;font-size:13px;font-weight:700;display:inline-block}
+
+  /* ---------- AMENITIES ---------- */
+  .amen{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px}
+  .amen div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;
+            font-size:14px;font-weight:600;display:flex;gap:10px;align-items:center}
+  .amen span{font-size:18px}
+
+  /* ---------- GALLERY ---------- */
+  .filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+  .filters button{border:1px solid var(--line);background:var(--card);padding:8px 15px;border-radius:999px;
+                  font-size:13px;font-weight:600;cursor:pointer;color:var(--ink);transition:.15s}
+  .filters button:hover{border-color:var(--accent)}
+  .filters button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+  .gal{columns:3;column-gap:12px}
+  @media(max-width:760px){.gal{columns:2}}
+  @media(max-width:440px){.gal{columns:1}}
+  .gal figure{margin:0 0 12px;break-inside:avoid;border-radius:12px;overflow:hidden;cursor:pointer;
+              position:relative;background:#eee}
+  .gal img{width:100%;transition:transform .35s ease}
+  .gal figure:hover img{transform:scale(1.05)}
+  .gal figcaption{position:absolute;left:0;bottom:0;right:0;padding:18px 12px 8px;color:#fff;font-size:12px;
+                  font-weight:600;background:linear-gradient(to top,rgba(0,0,0,.6),transparent);
+                  opacity:0;transition:.2s}
+  .gal figure:hover figcaption{opacity:1}
+
+  /* ---------- MAP ---------- */
+  .map{border:0;width:100%;height:380px;border-radius:16px;box-shadow:var(--shadow)}
+
+  /* ---------- WHATSAPP STICKY ---------- */
+  .wa{position:fixed;right:18px;bottom:18px;z-index:50;background:var(--wa);color:#fff;
+      text-decoration:none;font-weight:700;padding:14px 20px;border-radius:999px;
+      box-shadow:0 8px 24px rgba(37,211,102,.45);display:flex;align-items:center;gap:9px;font-size:15px}
+  .wa svg{width:22px;height:22px;fill:#fff}
+  .wa:hover{filter:brightness(1.05)}
+
+  footer{padding:34px 0;color:var(--muted);font-size:13px;text-align:center;border-top:1px solid var(--line)}
+
+  /* ---------- LIGHTBOX ---------- */
+  .lb{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:100;display:none;
+      align-items:center;justify-content:center}
+  .lb.open{display:flex}
+  .lb img{max-width:92vw;max-height:86vh;object-fit:contain;border-radius:6px}
+  .lb .x,.lb .nav{position:absolute;color:#fff;background:rgba(255,255,255,.12);border:0;cursor:pointer;
+                  border-radius:999px;width:48px;height:48px;font-size:24px;line-height:1}
+  .lb .x{top:18px;right:18px}
+  .lb .prev{left:18px;top:50%;transform:translateY(-50%)}
+  .lb .next{right:18px;top:50%;transform:translateY(-50%)}
+  .lb .cap{position:absolute;bottom:22px;left:0;right:0;text-align:center;color:#fff;font-size:14px;font-weight:600}
+</style>
+</head>
+<body>
+
+<!-- ======================= HERO ======================= -->
+<header class="hero">
+  <img src="fotos/terrace.jpeg" alt="Terraza entoldada con reposeras">
+  <div class="hero-txt">
+    <div class="in">
+      <h1>Terrazas de Manantiales</h1>
+      <div class="sub">Apartamento 004 · Manantiales, Uruguay</div>
+      <div class="badges">
+        <div class="badge">📅 25 dic — 15 ene</div>
+        <div class="badge">85 m² cubiertos</div>
+        <div class="badge">75 m² de terraza entoldada</div>
+        <div class="badge">🏊 Piscina</div>
+        <div class="badge">🏋️ Gimnasio</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ======================= PRECIO + FICHA ======================= -->
+<section>
+  <div class="wrap grid2">
+    <div class="card">
+      <h2 style="margin-top:0">Reserva tu temporada</h2>
+      <div class="price"><span class="ph">COMPLETAR PRECIO</span> <small>/ temporada 25 dic — 15 ene</small></div>
+      <p class="lead" style="margin-top:14px">
+        Alquiler por la temporada completa: del 25 de diciembre al 15 de enero.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="spec"><b>Edificio</b><span>Terrazas de Manantiales</span></div>
+      <div class="spec"><b>Unidad</b><span>Apartamento 004</span></div>
+      <div class="spec"><b>Superficie</b><span>85 m²</span></div>
+      <div class="spec"><b>Terraza entoldada</b><span>75 m²</span></div>
+      <div class="spec"><b>Temporada</b><span>25 dic — 15 ene</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= AMENITIES ======================= -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <h2>Servicios</h2>
+    <div class="amen">
+      <div><span>🏊</span> Piscina</div>
+      <div><span>🏋️</span> Gimnasio</div>
+      <div><span>🌳</span> Jardín</div>
+      <div><span>⛱️</span> Terraza entoldada 75 m²</div>
+      <div><span>🛏️</span> Dormitorio con vestidor</div>
+      <div><span>🚿</span> 2 baños</div>
+      <div><span>🍳</span> Cocina equipada</div>
+      <div><span>❄️</span> Aire acondicionado</div>
+      <div><span>🔥</span> Calefacción</div>
+      <div><span>🏢</span> Edificio con seguridad</div>
+    </div>
+    <p class="lead" style="margin-top:16px">Revisá y ajustá esta lista según lo que realmente incluye el apartamento (aire acondicionado, wifi, cochera, ropa de cama, etc.).</p>
+  </div>
+</section>
+
+<!-- ======================= GALERÍA ======================= -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <h2>Fotos</h2>
+    <div class="filters" id="filters"></div>
+    <div class="gal" id="gal"></div>
+  </div>
+</section>
+
+<!-- ======================= UBICACIÓN ======================= -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <h2>Ubicación</h2>
+    <p class="lead">Manantiales, Maldonado — a pocos minutos de José Ignacio y Punta del Este.</p>
+    <iframe class="map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+      src="https://www.google.com/maps?q=Terrazas%20de%20Manantiales%2C%20Manantiales%2C%20Maldonado%2C%20Uruguay&output=embed"></iframe>
+  </div>
+</section>
+
+<footer>
+  Terrazas de Manantiales · Apartamento 004 — alquiler temporario · Uruguay
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lb" id="lb">
+  <button class="x" id="lb-x">✕</button>
+  <button class="nav prev" id="lb-prev">‹</button>
+  <img id="lb-img" src="" alt="">
+  <button class="nav next" id="lb-next">›</button>
+  <div class="cap" id="lb-cap"></div>
+</div>
+
+<script>
+/* ============================================================= */
+/*  FOTOS — categoría y epígrafe                                  */
+/* ============================================================= */
+const PHOTOS = [
+  ["overview_2.jpg",                "exterior", "Vista aérea del complejo"],
+  ["drone_overview.jpg",            "exterior", "Vista aérea"],
+  ["living_room.jpeg",              "living",   "Living"],
+  ["living_room2.jpeg",             "living",   "Living"],
+  ["living_room3.jpeg",             "living",   "Living"],
+  ["living_room4.jpeg",             "living",   "Living"],
+  ["living_room5.jpeg",             "living",   "Living"],
+  ["living_room6.jpeg",             "living",   "Living"],
+  ["living_room7.jpeg",             "living",   "Living"],
+  ["living_room8.jpeg",             "living",   "Living"],
+  ["living_room9.jpeg",             "living",   "Living"],
+  ["living_room10.jpeg",            "living",   "Living"],
+  ["living_room11.jpeg",            "living",   "Living"],
+  ["living_room12.jpeg",            "living",   "Living"],
+  ["living_room13_overview.jpeg",   "living",   "Living — vista general"],
+  ["dinning_room_no_wall_to_living_room.jpeg", "living", "Comedor"],
+  ["kitcken.jpeg",                  "cocina",   "Cocina"],
+  ["bedroom.jpeg",                  "dormitorio","Dormitorio"],
+  ["bedroom2.jpeg",                 "dormitorio","Dormitorio"],
+  ["bedroom3.jpeg",                 "dormitorio","Dormitorio"],
+  ["bedroom4.jpeg",                 "dormitorio","Dormitorio"],
+  ["walking_closet_no_door_bedroom_view_of_terrace.jpeg","dormitorio","Vestidor / vista a la terraza"],
+  ["main_bathroom.jpeg",            "banos",    "Baño principal"],
+  ["guest_bathroom.jpeg",           "banos",    "Baño de visitas"],
+  ["terrace.jpeg",                  "terraza",  "Terraza"],
+  ["terrace2.jpeg",                 "terraza",  "Terraza"],
+  ["terrace3.jpeg",                 "terraza",  "Terraza"],
+  ["terrace4.jpeg",                 "terraza",  "Terraza"],
+  ["outside_view.jpeg",             "terraza",  "Vista exterior"],
+  ["entrance_stairs.jpeg",          "exterior", "Entrada"],
+  ["outside_view_garden_shared.jpeg","exterior","Jardín"],
+  ["pool.webp",                     "amenities","Piscina"],
+  ["shared_gym.jpg",                "amenities","Gimnasio"],
+  ["shared_building.jpeg",          "exterior", "Edificio"],
+  ["shared_building2.jpeg",         "exterior", "Edificio"],
+];
+
+const CATS = {
+  todas:"Todas", living:"Living / comedor", dormitorio:"Dormitorio",
+  cocina:"Cocina", banos:"Baños", terraza:"Terraza",
+  amenities:"Piscina / gym", exterior:"Edificio / exterior"
+};
+
+const gal = document.getElementById("gal");
+const filters = document.getElementById("filters");
+let current = "todas";
+
+Object.entries(CATS).forEach(([k,v],i)=>{
+  const b=document.createElement("button");
+  b.textContent=v; b.dataset.cat=k; if(i===0)b.classList.add("on");
+  b.onclick=()=>{current=k;[...filters.children].forEach(x=>x.classList.toggle("on",x===b));render();};
+  filters.appendChild(b);
+});
+
+function render(){
+  gal.innerHTML="";
+  PHOTOS.forEach((p,idx)=>{
+    if(current!=="todas" && p[1]!==current) return;
+    const fig=document.createElement("figure");
+    fig.innerHTML=`<img loading="lazy" src="fotos/${encodeURIComponent(p[0])}" alt="${p[2]}">
+                   <figcaption>${p[2]}</figcaption>`;
+    fig.onclick=()=>openLB(idx);
+    gal.appendChild(fig);
+  });
+}
+render();
+
+/* ---------- Lightbox ---------- */
+const lb=document.getElementById("lb"), lbImg=document.getElementById("lb-img"),
+      lbCap=document.getElementById("lb-cap");
+let lbIdx=0;
+function openLB(i){lbIdx=i;showLB();lb.classList.add("open");}
+function showLB(){const p=PHOTOS[lbIdx];lbImg.src="fotos/"+encodeURIComponent(p[0]);lbCap.textContent=p[2];}
+function move(d){lbIdx=(lbIdx+d+PHOTOS.length)%PHOTOS.length;showLB();}
+document.getElementById("lb-x").onclick=()=>lb.classList.remove("open");
+document.getElementById("lb-prev").onclick=()=>move(-1);
+document.getElementById("lb-next").onclick=()=>move(1);
+lb.onclick=e=>{if(e.target===lb)lb.classList.remove("open");};
+document.addEventListener("keydown",e=>{
+  if(!lb.classList.contains("open"))return;
+  if(e.key==="Escape")lb.classList.remove("open");
+  if(e.key==="ArrowLeft")move(-1);
+  if(e.key==="ArrowRight")move(1);
+});
+</script>
+</body>
+</html>
